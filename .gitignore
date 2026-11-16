@@ -4,3 +4,6 @@ assets/hero1.mp4
 .DS_Store
 assets/_orig_backup/
 brag-output/
+v2/
+assets/*/_*.jpg
+index-v2-work.html
