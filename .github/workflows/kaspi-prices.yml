@@ -9,18 +9,19 @@ concurrency: kaspi-prices
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: python3 scripts/kaspi_prices.py
+      - run: python3 scripts/build_shop_seo.py
       - name: Сохранить, если цены поменялись
         run: |
-          if [ -n "$(git status --porcelain kaspi-prices.json)" ]; then
+          if [ -n "$(git status --porcelain kaspi-prices.json shop.html)" ]; then
             git config user.name "kaspi-prices-bot"
             git config user.email "actions@users.noreply.github.com"
-            git add kaspi-prices.json
+            git add kaspi-prices.json shop.html
             git commit -m "Цены с Kaspi: $(date -u +%Y-%m-%d\ %H:%M)"
             git push
           fi
