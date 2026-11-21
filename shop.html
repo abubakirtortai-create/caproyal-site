@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Магазин — CAPROYAL</title>
-<meta name="description" content="Кепки CAPROYAL — магазин. Алматы и Астана, доставка по Казахстану.">
+<meta name="description" content="Кепки CAPROYAL: итальянская шерсть, кашемир, вельвет. Алматы и Астана, доставка по Казахстану.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--fg:#111;--mut:#8a8a8a;--line:#e6e6e6;--soft:#f4f4f2;--blue:#1d22b8;--red:#e8483f;--green:#1c8c4e}
+:root{--bg:#fff;--fg:#111;--mut:#8a8a8a;--line:#e6e6e6;--soft:#f4f3f0;--blue:#1d22b8;--red:#e8483f;--green:#1c7a46}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden}
 body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
@@ -16,7 +16,6 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 img{display:block;max-width:100%}
 
-/* header */
 .hd{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
 .hd-in{display:flex;align-items:center;gap:28px;height:64px;padding:0 32px}
 .logo{font-weight:800;font-size:30px;letter-spacing:-1.5px;line-height:1}
@@ -28,35 +27,32 @@ img{display:block;max-width:100%}
 .ic{margin-left:auto;display:flex;gap:18px;align-items:center}
 .ic button{position:relative;width:26px;height:26px;display:grid;place-items:center}
 .ic svg{width:22px;height:22px}
+.ic .city-btn{width:auto;display:flex}
+.city-btn{font-size:13px;font-weight:600;color:var(--mut);align-items:center;gap:4px;white-space:nowrap}
 .cnt{position:absolute;top:-6px;right:-8px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;display:grid;place-items:center;transform:scale(0);transition:transform .25s}
 .cnt.on{transform:scale(1)}
-.ic .city-btn{width:auto;display:flex}
-.city-btn{font-size:13px;font-weight:600;color:var(--mut);display:flex;align-items:center;gap:4px;white-space:nowrap}
 
-/* categories */
 .cats{display:flex;gap:26px;justify-content:center;padding:22px 32px 6px;overflow-x:auto;scrollbar-width:none}
 .cats::-webkit-scrollbar{display:none}
 .cat{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px;font-weight:500;flex:0 0 auto}
 .cat .ci{width:76px;height:76px;border-radius:50%;border:1.5px solid #222;overflow:hidden;display:grid;place-items:center;background:var(--soft);transition:transform .25s}
-.cat .ci img{width:100%;height:100%;object-fit:cover}
+.cat .ci img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .cat:hover .ci{transform:translateY(-3px)}
 .cat.act{font-weight:800}
 .cat.act .ci{border-width:3px}
 .ci-all{background:#111 !important;color:#fff;font-weight:800;font-size:22px;letter-spacing:-1px}
 
-/* toolbar */
-.bar{display:flex;justify-content:space-between;align-items:center;padding:14px 80px 14px;font-size:15px}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:14px 80px;font-size:15px}
 .crumbs b{font-weight:700}
 .crumbs span{color:var(--mut)}
 .sort{display:flex;align-items:center;gap:6px;color:var(--mut)}
 .sort select{appearance:none;border:0;font:inherit;font-weight:700;color:var(--fg);background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23111' stroke-width='1.6' fill='none'/%3E%3C/svg%3E") right center no-repeat;padding-right:20px;cursor:pointer}
 
-/* grid */
 .grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
-.card{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 14px 20px;cursor:pointer;opacity:0;transform:translateY(14px);animation:up .5s forwards}
+.card{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 14px 22px;cursor:pointer;opacity:0;transform:translateY(14px);animation:up .5s forwards}
 .card:nth-child(4n){border-right:0}
 @keyframes up{to{opacity:1;transform:none}}
-.ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--soft)}
+.ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--soft)}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s,transform .9s cubic-bezier(.2,.7,.2,1)}
 .ph .b{opacity:0}
 .card:hover .ph .a{opacity:0}
@@ -64,29 +60,25 @@ img{display:block;max-width:100%}
 .card:hover .ph img{transform:scale(1.04)}
 .badges{position:absolute;top:14px;left:14px;display:flex;z-index:2}
 .bdg{font-size:11px;font-weight:600;color:#fff;padding:6px 9px;background:var(--blue)}
-.bdg.hit{background:var(--red)}
-.bdg.dark{background:#111}
+.bdg.it{background:var(--green)}
 .fav{position:absolute;top:12px;right:12px;z-index:2;width:30px;height:30px;display:grid;place-items:center}
 .fav svg{width:17px;height:17px;fill:none;stroke:#111;stroke-width:1.6;transition:transform .2s}
 .fav.on svg{fill:#111}
-.fav:active svg{transform:scale(.8)}
-.nm{font-size:15px;font-weight:700;margin-top:18px;line-height:1.3;text-transform:lowercase}
-.mt{font-size:14px;font-weight:600;margin-top:10px;display:flex;align-items:center;gap:8px}
-.mt i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.15);display:inline-block}
-.mt .q{margin-left:auto;font-size:13px;color:var(--blue);opacity:0;transform:translateX(-6px);transition:.25s}
-.card:hover .mt .q{opacity:1;transform:none}
+.nm{font-size:15px;font-weight:700;margin-top:16px;line-height:1.3}
+.sub{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.4}
+.pr{font-size:16px;font-weight:800;margin-top:10px}
+.dots{display:flex;gap:6px;margin-top:10px;align-items:center;flex-wrap:wrap}
+.dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex:0 0 auto}
+.dots small{font-size:12px;color:var(--mut);margin-left:2px}
 .empty{grid-column:1/-1;padding:80px 20px;text-align:center;color:var(--mut)}
 
-/* side ask */
-.ask{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:30;background:#111;color:#fff;writing-mode:vertical-rl;transform-origin:center;padding:16px 11px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px}
+.ask{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:30;background:#111;color:#fff;writing-mode:vertical-rl;padding:16px 11px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px}
 .ask svg{width:18px;height:18px;transform:rotate(90deg)}
 
-/* overlays */
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:60;opacity:0;visibility:hidden;transition:.3s}
 .ov.on{opacity:1;visibility:visible}
-.x{position:absolute;top:14px;right:14px;width:34px;height:34px;display:grid;place-items:center;font-size:22px;z-index:3}
+.x{position:absolute;top:14px;right:14px;width:34px;height:34px;display:grid;place-items:center;font-size:22px;z-index:3;background:rgba(255,255,255,.85);border-radius:50%}
 
-/* city popup */
 .pop{position:fixed;left:50%;top:50%;z-index:70;width:min(420px,calc(100% - 32px));background:#fff;padding:34px 30px 30px;transform:translate(-50%,-46%);opacity:0;visibility:hidden;transition:.35s}
 .pop.on{opacity:1;visibility:visible;transform:translate(-50%,-50%)}
 .pop h3{font-size:26px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
@@ -101,51 +93,62 @@ img{display:block;max-width:100%}
 
 /* product modal */
 .pm{position:fixed;inset:0;z-index:65;display:grid;place-items:center;padding:24px;pointer-events:none}
-.pm-box{pointer-events:auto;background:#fff;width:min(1040px,100%);max-height:calc(100vh - 48px);overflow:auto;display:grid;grid-template-columns:1.15fr 1fr;position:relative;opacity:0;transform:translateY(24px);visibility:hidden;transition:.35s}
+.pm-box{pointer-events:auto;background:#fff;width:min(1100px,100%);max-height:calc(100vh - 48px);overflow:auto;display:grid;grid-template-columns:1.2fr 1fr;position:relative;opacity:0;transform:translateY(24px);visibility:hidden;transition:.35s}
 .pm.on .pm-box{opacity:1;transform:none;visibility:visible}
-.pm-gal{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:#fff}
-.pm-gal img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.pm-gal img:first-child{grid-column:1/-1}
-.pm-info{padding:40px 36px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;align-self:start}
-.pm-info h2{font-size:28px;font-weight:800;letter-spacing:-.6px;text-transform:lowercase;line-height:1.15}
-.pm-info .sub{color:var(--mut);font-size:14px;line-height:1.6}
+.gal{display:flex;flex-direction:column;gap:6px;padding:6px;position:sticky;top:0;align-self:start}
+.gal-main{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--soft)}
+.gal-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.gal-th{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.gal-th button{flex:0 0 76px;aspect-ratio:4/5;overflow:hidden;opacity:.55;transition:.2s;border:2px solid transparent}
+.gal-th button.on{opacity:1;border-color:#111}
+.gal-th img{width:100%;height:100%;object-fit:cover}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;font-size:20px;z-index:2}
+.gal-nav.l{left:10px}.gal-nav.r{right:10px}
+.pm-info{padding:40px 36px 34px;display:flex;flex-direction:column;gap:18px}
+.pm-info h2{font-size:30px;font-weight:800;letter-spacing:-.6px;line-height:1.1}
+.pm-price{font-size:26px;font-weight:800}
+.lbl{font-size:13px;color:var(--mut);display:flex;justify-content:space-between}
+.lbl b{color:var(--fg)}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px}
+.sw button{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;font-weight:600;line-height:1.2;text-align:center;color:var(--mut)}
+.sw .ring{width:56px;height:56px;border-radius:50%;padding:3px;border:2px solid transparent;transition:.2s}
+.sw .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 30%}
+.sw button.on{color:var(--fg)}
+.sw button.on .ring{border-color:#111}
 .spec{border-top:1px solid var(--line)}
-.spec div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
-.spec span{color:var(--mut)}
+.spec div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.spec span{color:var(--mut);flex:0 0 auto}
+.spec b{text-align:right;font-weight:600}
 .note{font-size:12.5px;color:var(--mut);line-height:1.5}
 
-/* drawer */
 .dr{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;z-index:66;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
 .dr.on{transform:none}
 .dr-h{padding:22px 24px;border-bottom:1px solid var(--line);font-weight:800;font-size:20px}
 .dr-l{flex:1;overflow:auto;padding:8px 24px}
 .it{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
-.it img{width:70px;height:90px;object-fit:cover}
-.it b{display:block;font-size:14px;text-transform:lowercase}
-.it small{color:var(--mut);font-size:12px}
+.it img{width:70px;height:88px;object-fit:cover}
+.it b{display:block;font-size:14px}
+.it small{color:var(--mut);font-size:12px;display:block;margin-top:2px}
 .qty{display:flex;align-items:center;gap:10px;margin-top:8px;font-weight:700}
 .qty button{width:26px;height:26px;border:1px solid var(--line)}
 .rm{margin-left:auto;color:var(--mut);font-size:20px}
 .dr-f{padding:20px 24px;border-top:1px solid var(--line);display:grid;gap:10px}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:18px}
 .dr-e{padding:60px 0;text-align:center;color:var(--mut)}
 
-/* search */
 .sr{position:fixed;top:0;left:0;right:0;z-index:66;background:#fff;padding:22px 32px;transform:translateY(-100%);transition:.35s;display:flex;gap:16px;align-items:center;border-bottom:1px solid var(--line)}
 .sr.on{transform:none}
 .sr input{flex:1;font:inherit;font-size:22px;font-weight:700;border:0;outline:0}
 
-/* side menu */
 .mn{position:fixed;top:0;right:0;bottom:0;width:min(360px,100%);background:#111;color:#fff;z-index:66;transform:translateX(100%);transition:.4s;padding:80px 34px;display:flex;flex-direction:column;gap:18px;font-size:24px;font-weight:800}
 .mn.on{transform:none}
-.mn .x{color:#fff}
+.mn .x{color:#111}
 .mn small{font-size:13px;font-weight:500;color:#aaa;margin-top:auto;line-height:1.7}
 
-/* toast */
 .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:#111;color:#fff;padding:13px 20px;font-size:14px;font-weight:600;z-index:90;opacity:0;transition:.3s;pointer-events:none}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
-/* footer */
-.ft{background:#111;color:#fff;padding:56px 32px 30px;margin-top:0}
+.ft{background:#111;color:#fff;padding:56px 32px 30px}
 .ft-g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
 .ft h4{font-size:13px;color:#888;font-weight:600;margin-bottom:14px}
 .ft a,.ft p{display:block;font-size:14px;line-height:2;color:#ddd}
@@ -163,6 +166,7 @@ img{display:block;max-width:100%}
  .cat .ci{width:64px;height:64px}
  .cat{font-size:12px}
  .bar{padding:12px 16px;font-size:13px}
+ .sort-l{display:none}
  .grid{grid-template-columns:repeat(2,1fr)}
  .card,.card:nth-child(3n),.card:nth-child(4n){border-right:1px solid var(--line)}
  .card:nth-child(2n){border-right:0}
@@ -170,19 +174,20 @@ img{display:block;max-width:100%}
  .badges{top:8px;left:8px}.bdg{font-size:10px;padding:5px 7px}
  .fav{top:6px;right:6px}
  .nm{font-size:13px;margin-top:12px}
- .mt{font-size:12px}
- .mt .q{display:none}
+ .sub{font-size:12px}
+ .pr{font-size:14px}
+ .dot{width:12px;height:12px}
  .pm{padding:0;place-items:end center}
- .pm-box{grid-template-columns:1fr;max-height:92vh}
- .pm-info{padding:24px 20px 28px;position:static}
- .pm-info h2{font-size:22px}
- .ask{top:auto;bottom:16px;right:16px;transform:none;writing-mode:horizontal-tb;border-radius:30px;padding:12px 16px;font-size:13px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+ .pm-box{grid-template-columns:1fr;max-height:94vh}
+ .gal{position:static}
+ .pm-info{padding:20px 18px 28px;gap:16px}
+ .pm-info h2{font-size:24px}
+ .pm-price{font-size:22px}
+ .ask{top:auto;bottom:16px;right:16px;transform:none;writing-mode:horizontal-tb;border-radius:30px;padding:12px 16px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
  .ask svg{transform:none}
- .sort-l{display:none}
  .ft-g{grid-template-columns:1fr 1fr}
  .ft .big{font-size:40px;grid-column:1/-1}
- .sr{padding:16px}
- .sr input{font-size:18px}
+ .sr{padding:16px}.sr input{font-size:18px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
 </style>
@@ -194,10 +199,10 @@ img{display:block;max-width:100%}
   <a href="index.html" class="logo" aria-label="CAPROYAL">cr<span>.</span></a>
   <nav class="nav">
    <a href="#" data-go="all">магазин</a>
-   <a href="#" data-go="new">новинки</a>
+   <a href="#" data-go="italy" class="hot">italy</a>
    <a href="#" data-go="velvet">вельвет</a>
-   <a href="#" data-go="trucker">тракер</a>
-   <a href="#" data-go="hit" class="hot">хиты</a>
+   <a href="#" data-go="snapback">snapback</a>
+   <a href="#" data-go="hitch">hitch</a>
    <a href="about.html">о бренде</a>
    <a href="index.html">главная</a>
   </nav>
@@ -215,7 +220,7 @@ img{display:block;max-width:100%}
 
 <div class="bar">
  <div class="crumbs"><a href="index.html"><b>главная</b></a> <span>/ <span id="crumb">магазин</span> (<span id="count">0</span>)</span></div>
- <label class="sort"><span class="sort-l">сортировать:</span> <select id="sort"><option value="def">по умолчанию</option><option value="new">сначала новинки</option><option value="hit">сначала хиты</option><option value="az">по названию</option></select></label>
+ <label class="sort"><span class="sort-l">сортировать:</span> <select id="sort"><option value="def">по умолчанию</option><option value="asc">сначала дешевле</option><option value="desc">сначала дороже</option></select></label>
 </div>
 
 <main class="grid" id="grid"></main>
@@ -232,7 +237,6 @@ img{display:block;max-width:100%}
  <div class="ft-b"><span>© 2026 CAPROYAL · королевский стиль · est 2024</span><a href="index.html">← на главный сайт</a></div>
 </footer>
 
-<!-- overlays -->
 <div class="ov" id="ov"></div>
 
 <div class="pop" id="pop" role="dialog" aria-label="Выбор города">
@@ -257,17 +261,17 @@ img{display:block;max-width:100%}
 
 <div class="sr" id="sr">
  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
- <input id="srIn" placeholder="поиск: вельвет, navy, тракер…" autocomplete="off">
+ <input id="srIn" placeholder="поиск: 903, кашемир, вельвет, бежевый…" autocomplete="off">
  <button data-close style="font-size:24px">×</button>
 </div>
 
 <nav class="mn" id="mn">
  <button class="x" data-close>×</button>
  <a href="#" data-go="all">магазин</a>
- <a href="#" data-go="new">новинки</a>
+ <a href="#" data-go="italy">italy</a>
  <a href="#" data-go="velvet">вельвет</a>
- <a href="#" data-go="trucker">тракер</a>
- <a href="#" data-go="hit">хиты</a>
+ <a href="#" data-go="snapback">snapback</a>
+ <a href="#" data-go="hitch">hitch</a>
  <a href="about.html">о бренде</a>
  <a href="index.html">главный сайт</a>
  <small>Алматы · +7 708 530 8901<br>Астана · +7 747 151 4974<br>@caproyal</small>
@@ -276,90 +280,64 @@ img{display:block;max-width:100%}
 <div class="toast" id="toast"></div>
 
 <script>
+const PRODUCTS=[{"id": "563", "price": 48000, "size": "56-64", "mat": "комбинация вельвета и мембранной ткани", "form": "шестиклейка", "adj": "кожаный ремешок на липучке", "total": 8, "cards": ["assets/catalog/563/card-1.jpg", "assets/catalog/563/card-2.jpg", "assets/catalog/563/card-3.jpg"], "colors": [{"n": "Коричневый / бежевый", "hex": ["#6b4630", "#cdbba0"], "img": ["assets/catalog/563/c1-1.jpg", "assets/catalog/563/c1-2.jpg", "assets/catalog/563/c1-3.jpg"]}, {"n": "Чёрный", "hex": ["#151515"], "img": ["assets/catalog/563/c2-1.jpg", "assets/catalog/563/c2-2.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/563/c3-1.jpg", "assets/catalog/563/c3-2.jpg", "assets/catalog/563/c3-3.jpg", "assets/catalog/563/c3-4.jpg"]}, {"n": "Зелёный / хаки", "hex": ["#55613f", "#6b6f4e"], "img": ["assets/catalog/563/c4-1.jpg", "assets/catalog/563/c4-2.jpg", "assets/catalog/563/c4-3.jpg"]}, {"n": "Коричневый / тёмно-синий", "hex": ["#6b4630", "#1f2a3c"], "img": ["assets/catalog/563/c5-1.jpg", "assets/catalog/563/c5-2.jpg", "assets/catalog/563/c5-3.jpg"]}]}, {"id": "416", "price": 48000, "size": "56-64", "mat": "премиальная мембранная и джинсовая ткань", "form": "шестиклейка", "adj": "регулируемый кожаный ремешок", "total": 8, "cards": ["assets/catalog/416/card-1.jpg", "assets/catalog/416/card-2.jpg", "assets/catalog/416/card-3.jpg"], "colors": [{"n": "Бордовый / тёмно-синий", "hex": ["#5a2430", "#1f2a3c"], "img": ["assets/catalog/416/c1-1.jpg", "assets/catalog/416/c1-2.jpg", "assets/catalog/416/c1-3.jpg"]}, {"n": "Тёмно-синий / хаки", "hex": ["#1f2a3c", "#6b6f4e"], "img": ["assets/catalog/416/c2-1.jpg", "assets/catalog/416/c2-2.jpg", "assets/catalog/416/c2-3.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/416/c3-1.jpg", "assets/catalog/416/c3-2.jpg", "assets/catalog/416/c3-3.jpg"]}, {"n": "Тёмно-синий / коричневый", "hex": ["#1f2a3c", "#6b4630"], "img": ["assets/catalog/416/c4-1.jpg", "assets/catalog/416/c4-2.jpg", "assets/catalog/416/c4-3.jpg"]}]}, {"id": "403", "price": 58000, "size": "56-64", "mat": "100% натуральный итальянский кашемир", "form": "шестиклейка", "adj": "металлическая застёжка с крючком", "total": 10, "cards": ["assets/catalog/403/card-1.jpg", "assets/catalog/403/card-2.jpg", "assets/catalog/403/card-3.jpg"], "colors": [{"n": "Бежевый", "hex": ["#cdbba0"], "img": ["assets/catalog/403/c1-1.jpg", "assets/catalog/403/c1-2.jpg", "assets/catalog/403/c1-3.jpg"]}, {"n": "Тёмно-коричневый", "hex": ["#3e2a20"], "img": ["assets/catalog/403/c2-1.jpg", "assets/catalog/403/c2-2.jpg", "assets/catalog/403/c2-3.jpg", "assets/catalog/403/c2-4.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/403/c3-1.jpg", "assets/catalog/403/c3-2.jpg", "assets/catalog/403/c3-3.jpg", "assets/catalog/403/c3-4.jpg"]}, {"n": "Серый", "hex": ["#8b8b8b"], "img": ["assets/catalog/403/c4-1.jpg", "assets/catalog/403/c4-2.jpg", "assets/catalog/403/c4-3.jpg", "assets/catalog/403/c4-4.jpg"]}, {"n": "Тёмно-зелёный", "hex": ["#2f3b2c"], "img": ["assets/catalog/403/c5-1.jpg", "assets/catalog/403/c5-2.jpg", "assets/catalog/403/c5-3.jpg", "assets/catalog/403/c5-4.jpg"]}]}, {"id": "903", "price": 68000, "size": "56-64", "mat": "100% натуральная итальянская шерсть мериноса и альпаки", "form": "американская форма Hitch (Hitch American)", "adj": "регулируемый ремешок из натуральной кожи", "total": 10, "cards": ["assets/catalog/903/card-1.jpg", "assets/catalog/903/card-2.jpg", "assets/catalog/903/card-3.jpg"], "colors": [{"n": "Бежевый", "hex": ["#cdbba0"], "img": ["assets/catalog/903/c1-1.jpg", "assets/catalog/903/c1-2.jpg", "assets/catalog/903/c1-3.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/903/c2-1.jpg", "assets/catalog/903/c2-2.jpg", "assets/catalog/903/c2-3.jpg"]}, {"n": "Чёрный", "hex": ["#151515"], "img": ["assets/catalog/903/c3-1.jpg", "assets/catalog/903/c3-2.jpg", "assets/catalog/903/c3-3.jpg"]}, {"n": "Графит", "hex": ["#3d3f42"], "img": ["assets/catalog/903/c4-1.jpg", "assets/catalog/903/c4-2.jpg", "assets/catalog/903/c4-3.jpg"]}, {"n": "Тёмно-фиолетовый", "hex": ["#3b2b45"], "img": ["assets/catalog/903/c5-1.jpg", "assets/catalog/903/c5-2.jpg", "assets/catalog/903/c5-3.jpg"]}]}, {"id": "590", "price": 68000, "size": "56-64", "mat": "100% натуральная итальянская шерсть мериноса и альпаки", "form": "американская форма Hitch (Hitch American)", "adj": "регулируемый ремешок из натуральной кожи", "total": 10, "cards": ["assets/catalog/590/card-1.jpg", "assets/catalog/590/card-2.jpg", "assets/catalog/590/card-3.jpg"], "colors": [{"n": "Коричневый", "hex": ["#6b4630"], "img": ["assets/catalog/590/c1-1.jpg", "assets/catalog/590/c1-2.jpg", "assets/catalog/590/c1-3.jpg"]}, {"n": "Чёрно-коричневый", "hex": ["#151515", "#6b4630"], "img": ["assets/catalog/590/c2-1.jpg", "assets/catalog/590/c2-2.jpg", "assets/catalog/590/c2-3.jpg"]}, {"n": "Серо / тёмно-синий", "hex": ["#7d8794", "#1f2a3c"], "img": ["assets/catalog/590/c3-1.jpg", "assets/catalog/590/c3-2.jpg", "assets/catalog/590/c3-3.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/590/c4-1.jpg", "assets/catalog/590/c4-2.jpg", "assets/catalog/590/c4-3.jpg"]}, {"n": "Чёрный", "hex": ["#151515"], "img": ["assets/catalog/590/c5-1.jpg", "assets/catalog/590/c5-2.jpg", "assets/catalog/590/c5-3.jpg"]}]}, {"id": "581", "price": 48000, "size": "56-64", "mat": "комбинация вельвета и мембранной ткани", "form": "Hitch американка", "adj": "кожаный ремешок на липучке", "total": 8, "cards": ["assets/catalog/581/card-1.jpg", "assets/catalog/581/card-2.jpg", "assets/catalog/581/card-3.jpg"], "colors": [{"n": "Зелёный / хаки", "hex": ["#55613f", "#6b6f4e"], "img": ["assets/catalog/581/c1-1.jpg", "assets/catalog/581/c1-2.jpg", "assets/catalog/581/c1-3.jpg", "assets/catalog/581/c1-4.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/581/c2-1.jpg", "assets/catalog/581/c2-2.jpg", "assets/catalog/581/c2-3.jpg"]}, {"n": "Чёрный", "hex": ["#151515"], "img": ["assets/catalog/581/c3-1.jpg", "assets/catalog/581/c3-2.jpg", "assets/catalog/581/c3-3.jpg"]}]}, {"id": "027", "price": 48000, "size": "56-64", "mat": "премиальная мембранная ткань", "form": "snapback", "adj": "регулируемый кожаный ремешок", "total": 8, "cards": ["assets/catalog/027/card-1.jpg", "assets/catalog/027/card-2.jpg", "assets/catalog/027/card-3.jpg"], "colors": [{"n": "Оранжевый", "hex": ["#c8621e"], "img": ["assets/catalog/027/c1-1.jpg", "assets/catalog/027/c1-2.jpg", "assets/catalog/027/c1-3.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/027/c2-1.jpg", "assets/catalog/027/c2-2.jpg", "assets/catalog/027/c2-3.jpg"]}, {"n": "Чёрный", "hex": ["#151515"], "img": ["assets/catalog/027/c3-1.jpg", "assets/catalog/027/c3-2.jpg", "assets/catalog/027/c3-3.jpg"]}, {"n": "Зелёный / хаки", "hex": ["#55613f", "#6b6f4e"], "img": ["assets/catalog/027/c4-1.jpg", "assets/catalog/027/c4-2.jpg", "assets/catalog/027/c4-3.jpg"]}, {"n": "Коричневый", "hex": ["#6b4630"], "img": ["assets/catalog/027/c5-1.jpg", "assets/catalog/027/c5-2.jpg", "assets/catalog/027/c5-3.jpg"]}, {"n": "Бежевый", "hex": ["#cdbba0"], "img": ["assets/catalog/027/c6-1.jpg", "assets/catalog/027/c6-2.jpg", "assets/catalog/027/c6-3.jpg"]}]}, {"id": "530", "price": 68000, "size": "56-64", "mat": "100% натуральная итальянская шерсть и вельвет", "form": "snapback", "adj": "регулируемый ремешок из натуральной кожи", "total": 10, "cards": ["assets/catalog/530/card-1.jpg", "assets/catalog/530/card-2.jpg", "assets/catalog/530/card-3.jpg"], "colors": [{"n": "Оранжевый / чёрный", "hex": ["#c8621e", "#151515"], "img": ["assets/catalog/530/c1-1.jpg", "assets/catalog/530/c1-2.jpg", "assets/catalog/530/c1-3.jpg"]}, {"n": "Зелёный / хаки", "hex": ["#55613f", "#6b6f4e"], "img": ["assets/catalog/530/c2-1.jpg", "assets/catalog/530/c2-2.jpg", "assets/catalog/530/c2-3.jpg"]}, {"n": "Хаки / серый", "hex": ["#6b6f4e", "#8b8b8b"], "img": ["assets/catalog/530/c3-1.jpg", "assets/catalog/530/c3-2.jpg", "assets/catalog/530/c3-3.jpg"]}, {"n": "Чёрный", "hex": ["#151515"], "img": ["assets/catalog/530/c4-1.jpg", "assets/catalog/530/c4-2.jpg", "assets/catalog/530/c4-3.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/530/c5-1.jpg", "assets/catalog/530/c5-2.jpg", "assets/catalog/530/c5-3.jpg"]}]}, {"id": "303", "price": 68000, "size": "56-64", "mat": "100% натуральная итальянская шерсть", "form": "snapback", "adj": "регулируемый ремешок из натуральной кожи", "total": 10, "cards": ["assets/catalog/303/card-1.jpg", "assets/catalog/303/card-2.jpg", "assets/catalog/303/card-3.jpg"], "colors": [{"n": "Бежевый / коричневый", "hex": ["#cdbba0", "#6b4630"], "img": ["assets/catalog/303/c1-1.jpg", "assets/catalog/303/c1-2.jpg", "assets/catalog/303/c1-3.jpg"]}, {"n": "Тёмно-синий", "hex": ["#1f2a3c"], "img": ["assets/catalog/303/c2-1.jpg", "assets/catalog/303/c2-2.jpg", "assets/catalog/303/c2-3.jpg"]}, {"n": "Синий / сине-коричневый", "hex": ["#24344d", "#6b4630"], "img": ["assets/catalog/303/c3-1.jpg", "assets/catalog/303/c3-2.jpg", "assets/catalog/303/c3-3.jpg"]}, {"n": "Серо-синий", "hex": ["#7d8794"], "img": ["assets/catalog/303/c4-1.jpg", "assets/catalog/303/c4-2.jpg", "assets/catalog/303/c4-3.jpg", "assets/catalog/303/c4-4.jpg"]}]}];
 (function(){
-const P='assets/shop/';
-const f=n=>P+'f26_cap-'+n+'.jpg';
-const c=n=>P+'cap'+n+'.jpg';
-const cs=n=>P+'cs_cs'+n+'.jpg';
-const sl=n=>P+'sal_sal'+n+'.jpg';
-// tags: new (осень-зима 2026), velvet, wool, denim, classic, trucker, summer, hit
-const PRODUCTS=[
- {id:'olive-wool',n:'кепка olive wool хаки',m:'шерсть · вельветовый козырёк',col:'#6b6f5a',img:[f('03'),f('04'),f('02')],t:['new','wool','hit']},
- {id:'navy-wool',n:'кепка navy wool тёмно-синяя',m:'шерсть · вельветовый козырёк',col:'#2c3a4a',img:[f('10'),f('14'),f('12'),f('13')],t:['new','wool','hit']},
- {id:'black-velvet',n:'кепка velvet cr чёрная',m:'вельвет · вышивка CR',col:'#151515',img:[f('16'),f('17'),f('19')],t:['new','velvet']},
- {id:'bordo-denim',n:'кепка bordo velvet × denim',m:'вельвет + деним · патч CR',col:'#5a2430',img:[f('22'),f('23'),f('24')],t:['new','velvet','denim','hit']},
- {id:'graphite-wool',n:'кепка graphite wool',m:'шерсть · вельветовый козырёк',col:'#3a3a3a',img:[f('06'),f('08')],t:['new','wool']},
- {id:'black-smooth',n:'кепка black smooth чёрная',m:'гладкая ткань · кожаный ремешок',col:'#0f0f0f',img:[f('07'),f('21')],t:['new','wool']},
- {id:'denim-collection',n:'кепка denim collection',m:'деним · ремешок CAP ROYAL',col:'#3c5470',img:[f('26'),f('27')],t:['new','denim']},
- {id:'beige-cr',n:'кепка cr patch бежевая',m:'хлопок · кант-шнур',col:'#cdb79a',img:[c('03'),c('20')],t:['classic','summer']},
- {id:'black-cr',n:'кепка cr patch чёрная',m:'хлопок · белый патч CR',col:'#111',img:[c('04'),c('15')],t:['classic','hit']},
- {id:'sky-trucker',n:'кепка sky голубая',m:'хлопок · белый козырёк',col:'#4f86b8',img:[c('05'),c('02'),c('01')],t:['classic','summer']},
- {id:'sage-cr',n:'кепка sage cr зелёная',m:'хлопок · патч CR',col:'#7e9a7f',img:[c('06'),c('07')],t:['classic','summer']},
- {id:'terracotta',n:'кепка terracotta',m:'хлопок · классика',col:'#c0603a',img:[c('09'),c('08')],t:['classic','summer','hit']},
- {id:'white-royal',n:'кепка royal белая',m:'хлопок · круглый патч CAP ROYAL',col:'#f2efe8',img:[c('10'),c('11')],t:['classic','summer']},
- {id:'red-classic',n:'кепка red classic красная',m:'хлопок · патч CR',col:'#d42b2b',img:[c('13'),sl('11')],t:['classic','summer']},
- {id:'red-white',n:'кепка red × white',m:'хлопок · вышивка CR',col:'#c9372b',img:[c('16')],t:['classic','summer']},
- {id:'black-gu',n:'кепка black brown',m:'замша-козырёк · вышивка',col:'#1a1714',img:[c('17'),c('21')],t:['classic']},
- {id:'white-rope',n:'кепка cr rope белая',m:'хлопок · кант-шнур',col:'#f5f5f5',img:[c('18'),c('12')],t:['classic','summer']},
- {id:'brown-trucker',n:'тракер caramel',m:'сетка · вышивка',col:'#a76a35',img:[c('24'),c('19')],t:['trucker','summer']},
- {id:'navy-trucker',n:'тракер navy × sand',m:'сетка · вышивка',col:'#22314a',img:[c('22'),c('23')],t:['trucker','summer','hit']},
- {id:'mint-wings',n:'кепка mint wings',m:'хлопок · вышивка крылья',col:'#8fd8c6',img:[cs('04'),cs('03')],t:['summer']},
- {id:'mint-white',n:'кепка mint × white',m:'хлопок · кант-шнур',col:'#a8e2d4',img:[cs('10'),cs('09')],t:['summer']},
- {id:'red-wings',n:'кепка red wings',m:'хлопок · белый козырёк',col:'#d8343a',img:[cs('15'),cs('12')],t:['summer']},
- {id:'grey-black',n:'кепка grey × black',m:'хлопок · круглый патч',col:'#7d8590',img:[sl('06'),sl('16')],t:['classic']},
- {id:'denim-dark',n:'кепка denim тёмная',m:'деним · круглый патч',col:'#34445a',img:[sl('09'),sl('22')],t:['denim','classic','hit']},
- {id:'grey-denim',n:'кепка grey denim',m:'деним · круглый патч',col:'#5f6670',img:[sl('13')],t:['denim']},
- {id:'navy-rope',n:'кепка navy cr rope',m:'хлопок · кант-шнур',col:'#1f2c44',img:[sl('17')],t:['classic']},
- {id:'grey-g',n:'кепка stone серая',m:'хлопок · металлический значок',col:'#9ba0a6',img:[sl('26')],t:['classic']}
-];
+// теги для категорий
+const TAGS={'563':['velvet','six'],'416':['denim','six'],'403':['italy','cashmere','six'],'903':['italy','wool','hitch'],'590':['italy','wool','hitch'],'581':['velvet','hitch'],'027':['snapback','velvet'],'530':['italy','wool','velvet','snapback'],'303':['italy','wool','snapback']};
+const SHORT={'563':'вельвет + мембрана','416':'мембрана + деним','403':'итальянский кашемир','903':'шерсть мериноса и альпаки','590':'шерсть мериноса и альпаки','581':'вельвет + мембрана','027':'премиальная мембрана','530':'итальянская шерсть + вельвет','303':'итальянская шерсть'};
+// у некоторых цветов первым идёт крупный план — ставим вперёд фото кепки на модели
+const FIRST={'563':{2:2},'403':{0:2,2:1},'581':{0:1,1:1},'303':{1:1,2:1}};
+PRODUCTS.forEach(p=>{p.t=TAGS[p.id]||[];p.short=SHORT[p.id]||p.mat;
+ Object.entries(FIRST[p.id]||{}).forEach(([ci,k])=>{const a=p.colors[ci].img;a.unshift(a.splice(k,1)[0])})});
 const CATS=[
  {k:'all',n:'все'},
- {k:'new',n:'осень-зима',i:f('03')},
- {k:'wool',n:'шерсть',i:f('10')},
- {k:'velvet',n:'вельвет',i:f('17')},
- {k:'denim',n:'деним',i:f('26')},
- {k:'classic',n:'классика',i:c('04')},
- {k:'trucker',n:'тракер',i:c('24')},
- {k:'summer',n:'лето',i:cs('04')},
- {k:'hit',n:'хиты',i:c('09')}
+ {k:'italy',n:'made in italy',m:'903'},
+ {k:'cashmere',n:'кашемир',m:'403'},
+ {k:'wool',n:'шерсть',m:'303'},
+ {k:'velvet',n:'вельвет',m:'530'},
+ {k:'denim',n:'деним',m:'416'},
+ {k:'snapback',n:'snapback',m:'027'},
+ {k:'hitch',n:'hitch',m:'590'},
+ {k:'six',n:'шестиклейка',m:'563'}
 ];
 const CITY={almaty:{n:'Алматы',wa:'77085308901'},astana:{n:'Астана',wa:'77471514974'},kz:{n:'Казахстан',wa:'77085308901'}};
 
-const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
-const store={get(k,d){try{return JSON.parse(localStorage.getItem('cr_'+k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem('cr_'+k,JSON.stringify(v))}catch(e){}}};
+const $=s=>document.querySelector(s);
+const store={get(k,d){try{return JSON.parse(localStorage.getItem('cr2_'+k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem('cr2_'+k,JSON.stringify(v))}catch(e){}}};
 let state={cat:'all',q:'',sort:'def',favOnly:false};
 let fav=store.get('fav',[]), cart=store.get('cart',{}), city=store.get('city',null);
-
+const byId=id=>PRODUCTS.find(p=>p.id===id);
+const money=n=>n.toLocaleString('ru-RU').replace(/,/g,' ')+' ₸';
 const waLink=txt=>'https://wa.me/'+(CITY[city]||CITY.almaty).wa+'?text='+encodeURIComponent(txt);
 const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1800)};
-const byId=id=>PRODUCTS.find(p=>p.id===id);
+const dot=h=>`<span class="dot" style="background:${h.length>1?`linear-gradient(135deg,${h[0]} 50%,${h[1]} 50%)`:h[0]}"></span>`;
+const badges=p=>p.t.includes('italy')?'<span class="bdg it">made in italy</span>':'';
 
 function renderCats(){
- $('#cats').innerHTML=CATS.map(x=>`<button class="cat${state.cat===x.k&&!state.favOnly?' act':''}" data-cat="${x.k}"><span class="ci${x.i?'':' ci-all'}">${x.i?`<img src="${x.i}" alt="" loading="lazy">`:'cr.'}</span>${x.n}</button>`).join('');
+ $('#cats').innerHTML=CATS.map(x=>`<button class="cat${state.cat===x.k&&!state.favOnly?' act':''}" data-cat="${x.k}"><span class="ci${x.m?'':' ci-all'}">${x.m?`<img src="${byId(x.m).cards[0]}" alt="" loading="lazy">`:'cr.'}</span>${x.n}</button>`).join('');
 }
 function list(){
- let l=PRODUCTS.filter(p=>(state.favOnly?fav.includes(p.id):(state.cat==='all'||p.t.includes(state.cat))));
- if(state.q){const q=state.q.toLowerCase();l=l.filter(p=>(p.n+' '+p.m+' '+p.t.join(' ')).toLowerCase().includes(q))}
- if(state.sort==='new')l=[...l].sort((a,b)=>b.t.includes('new')-a.t.includes('new'));
- if(state.sort==='hit')l=[...l].sort((a,b)=>b.t.includes('hit')-a.t.includes('hit'));
- if(state.sort==='az')l=[...l].sort((a,b)=>a.n.replace(/^(кепка|тракер) /,'').localeCompare(b.n.replace(/^(кепка|тракер) /,'')));
+ let l=PRODUCTS.filter(p=>state.favOnly?fav.includes(p.id):(state.cat==='all'||p.t.includes(state.cat)));
+ if(state.q){const q=state.q.toLowerCase();l=l.filter(p=>(p.id+' '+p.mat+' '+p.form+' '+p.colors.map(c=>c.n).join(' ')).toLowerCase().includes(q))}
+ if(state.sort==='asc')l=[...l].sort((a,b)=>a.price-b.price);
+ if(state.sort==='desc')l=[...l].sort((a,b)=>b.price-a.price);
  return l;
 }
-function badges(p){let b='';if(p.t.includes('new'))b+='<span class="bdg">новинка</span>';if(p.t.includes('hit'))b+='<span class="bdg hit">хит</span>';return b}
 function renderGrid(){
  const l=list();
  $('#count').textContent=l.length;
  $('#crumb').textContent=state.favOnly?'избранное':(state.cat==='all'?'магазин':CATS.find(x=>x.k===state.cat).n);
  $('#grid').innerHTML=l.length?l.map((p,i)=>`
- <article class="card" data-id="${p.id}" style="animation-delay:${Math.min(i,12)*45}ms">
+ <article class="card" data-id="${p.id}" style="animation-delay:${Math.min(i,12)*50}ms">
   <div class="ph">
-   <div class="badges">${badges(p)}</div>
    <button class="fav${fav.includes(p.id)?' on':''}" data-fav="${p.id}" aria-label="В избранное"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
-   <img class="a" src="${p.img[0]}" alt="${p.n}" loading="lazy">
-   ${p.img[1]?`<img class="b" src="${p.img[1]}" alt="" loading="lazy">`:''}
+   <img class="a" src="${p.cards[0]}" alt="Кепка CAPROYAL модель ${p.id}" loading="lazy">
+   <img class="b" src="${p.cards[1]}" alt="" loading="lazy">
   </div>
-  <div class="nm">${p.n}</div>
-  <div class="mt"><i style="background:${p.col}"></i>${p.m.split(' · ')[0]}<span class="q">подробнее →</span></div>
+  <div class="nm">модель ${p.id}</div>
+  <div class="sub">${p.short} · ${p.form.replace(/ \(.*\)/,'').replace('американская форма ','')}</div>
+  <div class="pr">${money(p.price)}</div>
+  <div class="dots">${p.colors.map(c=>dot(c.hex)).join('')}<small>${p.total} цветов</small></div>
  </article>`).join(''):`<div class="empty">${state.favOnly?'В избранном пока пусто — нажмите закладку на карточке.':'Ничего не нашли. Попробуйте другой запрос.'}</div>`;
  renderCats();
 }
@@ -369,61 +347,104 @@ function counts(){
 }
 function setCity(k){city=k;store.set('city',k);$('#cityName').textContent=CITY[k].n;$('#ask').href=waLink('Здравствуйте! У меня вопрос по кепкам 🧢');}
 
-// overlays
 const ov=$('#ov');
 function open(el){closeAll();el.classList.add('on');ov.classList.add('on');document.body.style.overflow='hidden'}
 function closeAll(){['#pop','#pm','#dr','#sr','#mn'].forEach(s=>$(s).classList.remove('on'));ov.classList.remove('on');document.body.style.overflow=''}
 ov.onclick=closeAll;
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();if($('#pm').classList.contains('on')){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)}});
 
-function openProduct(id){
- const p=byId(id);
+// product view: ci = -1 -> основные карточки, иначе индекс цвета
+let cur={p:null,ci:0,i:0};
+const imgsOf=()=>cur.ci<0?cur.p.cards:cur.p.colors[cur.ci].img;
+function step(d){const a=imgsOf();cur.i=(cur.i+d+a.length)%a.length;drawGal()}
+function drawGal(){
+ const a=imgsOf();
+ $('#galMain').src=a[cur.i];
+ $('#galTh').innerHTML=a.map((s,i)=>`<button class="${i===cur.i?'on':''}" data-gi="${i}"><img src="${s}" alt=""></button>`).join('');
+}
+function drawInfo(){
+ const p=cur.p,c=cur.ci<0?null:p.colors[cur.ci];
+ $('#swName').textContent=c?c.n:'выберите цвет';
+ document.querySelectorAll('#sw button').forEach((b,i)=>b.classList.toggle('on',i===cur.ci));
+ $('#addBtn').disabled=false;
+ $('#waBtn').href=waLink(`Здравствуйте! Хочу заказать кепку CAPROYAL модель ${p.id}${c?', цвет: '+c.n:''} — ${money(p.price)} 🧢`);
+}
+function openProduct(id,ci){
+ const p=byId(id);cur={p,ci:ci??-1,i:0};
  $('#pmBox').innerHTML=`<button class="x" data-close>×</button>
- <div class="pm-gal">${p.img.map(s=>`<img src="${s}" alt="${p.n}">`).join('')}</div>
+ <div class="gal">
+  <div class="gal-main"><img id="galMain" alt="Кепка CAPROYAL модель ${p.id}"><button class="gal-nav l" data-step="-1" aria-label="Назад">‹</button><button class="gal-nav r" data-step="1" aria-label="Вперёд">›</button></div>
+  <div class="gal-th" id="galTh"></div>
+ </div>
  <div class="pm-info">
   <div class="badges" style="position:static">${badges(p)}</div>
-  <h2>${p.n}</h2>
-  <div class="sub">${p.m}. Оригинал CAPROYAL — премиальные материалы, аккуратная вышивка, регулируемая посадка.</div>
+  <h2>модель ${p.id}</h2>
+  <div class="pm-price">${money(p.price)}</div>
+  <div>
+   <div class="lbl" style="margin-bottom:12px">цвет: <b id="swName"></b></div>
+   <div class="sw" id="sw">${p.colors.map((c,i)=>`<button data-ci="${i}"><span class="ring"><img src="${c.img[0]}" alt=""></span>${c.n}</button>`).join('')}</div>
+   <div class="note" style="margin-top:10px">Всего ${p.total} цветов — остальные варианты покажем в WhatsApp.</div>
+  </div>
+  <button class="btn fill" id="addBtn" data-add="${p.id}">добавить в корзину</button>
+  <a class="btn wa" id="waBtn" target="_blank" rel="noopener" href="#">заказать в WhatsApp</a>
   <div class="spec">
-   <div><span>цвет</span><b style="display:flex;align-items:center;gap:8px"><i style="width:14px;height:14px;border-radius:50%;background:${p.col};border:1px solid rgba(0,0,0,.15);display:inline-block"></i></b></div>
-   <div><span>материал</span><b>${p.m.split(' · ')[0]}</b></div>
-   <div><span>размер</span><b>one size · регулируется</b></div>
+   <div><span>размер</span><b>${p.size} · регулируется</b></div>
+   <div><span>материал</span><b>${p.mat}</b></div>
+   <div><span>форма</span><b>${p.form}</b></div>
+   <div><span>регулировка</span><b>${p.adj}</b></div>
    <div><span>город</span><b>${city?CITY[city].n:'—'} <button style="color:var(--blue);font-weight:600" data-citych>изменить</button></b></div>
   </div>
-  <button class="btn fill" data-add="${p.id}">добавить в корзину</button>
-  <a class="btn wa" target="_blank" rel="noopener" href="${waLink('Здравствуйте! Хочу заказать: '+p.n+' 🧢')}">заказать в WhatsApp</a>
-  <div class="note">Оплата онлайн · отправка в день заказа · доставка по всему Казахстану. Наличие и цену подтвердит менеджер.</div>
+  <div class="note">Оплата онлайн · отправка в день заказа · доставка по всему Казахстану.</div>
  </div>`;
+ drawGal();drawInfo();
  open($('#pm'));
+ $('#pmBox').scrollTop=0;
 }
+// cart key = id|colorIndex
+const ckey=(id,ci)=>id+'|'+ci;
 function renderCart(showFav){
- const ids=showFav?fav:Object.keys(cart);
  $('#drTitle').textContent=showFav?'избранное':'корзина';
- $('#drList').innerHTML=ids.length?ids.map(id=>{const p=byId(id);return `<div class="it"><img src="${p.img[0]}" alt=""><div><b>${p.n}</b><small>${p.m}</small>${showFav?`<div class="qty"><button data-add="${id}" style="width:auto;padding:0 10px;font-size:12px">в корзину</button></div>`:`<div class="qty"><button data-q="${id}" data-d="-1">−</button>${cart[id]}<button data-q="${id}" data-d="1">+</button></div>`}</div><button class="rm" ${showFav?`data-unfav="${id}"`:`data-rm="${id}"`} aria-label="Убрать">×</button></div>`}).join(''):`<div class="dr-e">${showFav?'Пока пусто':'Корзина пуста'}</div>`;
- if(!showFav&&ids.length){
-  const txt='Здравствуйте! Хочу заказать:\n'+ids.map((id,i)=>`${i+1}. ${byId(id).n} — ${cart[id]} шт.`).join('\n')+'\nГород: '+(city?CITY[city].n:'—')+' 🧢';
-  $('#drFoot').innerHTML=`<a class="btn wa" target="_blank" rel="noopener" href="${waLink(txt)}">оформить заказ в WhatsApp</a><div class="note" style="text-align:center">Менеджер подтвердит наличие и пришлёт ссылку на оплату</div>`;
- } else $('#drFoot').innerHTML=showFav&&ids.length?`<button class="btn" data-showfav>показать в каталоге</button>`:'';
+ if(showFav){
+  $('#drList').innerHTML=fav.length?fav.map(id=>{const p=byId(id);return `<div class="it"><img src="${p.cards[0]}" alt=""><div><b>модель ${p.id}</b><small>${money(p.price)} · ${p.short}</small><div class="qty"><button data-open="${id}" style="width:auto;padding:0 10px;font-size:12px">выбрать цвет</button></div></div><button class="rm" data-unfav="${id}" aria-label="Убрать">×</button></div>`}).join(''):'<div class="dr-e">Пока пусто</div>';
+  $('#drFoot').innerHTML='';
+ } else {
+  const keys=Object.keys(cart);
+  $('#drList').innerHTML=keys.length?keys.map(k=>{const [id,ci]=k.split('|');const p=byId(id);const c=+ci>=0?p.colors[+ci]:null;return `<div class="it"><img src="${c?c.img[0]:p.cards[0]}" alt=""><div><b>модель ${p.id}</b><small>${c?c.n:'цвет уточню в WhatsApp'}</small><small>${money(p.price)}</small><div class="qty"><button data-q="${k}" data-d="-1">−</button>${cart[k]}<button data-q="${k}" data-d="1">+</button></div></div><button class="rm" data-rm="${k}" aria-label="Убрать">×</button></div>`}).join(''):'<div class="dr-e">Корзина пуста</div>';
+  if(keys.length){
+   const sum=keys.reduce((s,k)=>s+byId(k.split('|')[0]).price*cart[k],0);
+   const txt='Здравствуйте! Хочу заказать:\n'+keys.map((k,i)=>{const [id,ci]=k.split('|');const p=byId(id);const c=+ci>=0?p.colors[+ci].n:'цвет уточню';return `${i+1}. Модель ${id}, ${c} — ${cart[k]} шт. × ${money(p.price)}`}).join('\n')+`\nИтого: ${money(sum)}\nГород: ${city?CITY[city].n:'—'} 🧢`;
+   $('#drFoot').innerHTML=`<div class="tot"><span>итого</span><span>${money(sum)}</span></div><a class="btn wa" target="_blank" rel="noopener" href="${waLink(txt)}">оформить заказ в WhatsApp</a><div class="note" style="text-align:center">Менеджер подтвердит наличие и пришлёт ссылку на оплату</div>`;
+  } else $('#drFoot').innerHTML='';
+ }
  $('#dr').dataset.mode=showFav?'fav':'cart';
 }
 function saveCart(){store.set('cart',cart);counts();if($('#dr').classList.contains('on'))renderCart($('#dr').dataset.mode==='fav')}
 
 document.addEventListener('click',e=>{
- const t=e.target.closest('[data-fav],[data-cat],[data-go],[data-close],[data-city],[data-add],[data-q],[data-rm],[data-unfav],[data-citych],[data-showfav],.card');
+ const t=e.target.closest('[data-fav],[data-cat],[data-go],[data-close],[data-city],[data-add],[data-q],[data-rm],[data-unfav],[data-citych],[data-ci],[data-gi],[data-step],[data-open],.card');
  if(!t)return;
- if(t.dataset.fav){e.stopPropagation();const id=t.dataset.fav;fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];store.set('fav',fav);t.classList.toggle('on');counts();toast(fav.includes(id)?'добавлено в избранное':'убрано из избранного');if(state.favOnly)renderGrid();return}
- if(t.dataset.cat){state.cat=t.dataset.cat;state.favOnly=false;renderGrid();return}
- if(t.dataset.go){e.preventDefault();closeAll();state.cat=t.dataset.go;state.favOnly=false;state.q='';renderGrid();window.scrollTo({top:0,behavior:'smooth'});return}
+ const d=t.dataset;
+ if(d.fav){e.stopPropagation();const id=d.fav;fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];store.set('fav',fav);t.classList.toggle('on');counts();toast(fav.includes(id)?'добавлено в избранное':'убрано из избранного');if(state.favOnly)renderGrid();return}
+ if(d.cat){state.cat=d.cat;state.favOnly=false;renderGrid();return}
+ if(d.go){e.preventDefault();closeAll();state.cat=d.go;state.favOnly=false;state.q='';renderGrid();window.scrollTo({top:0,behavior:'smooth'});return}
  if(t.hasAttribute('data-close')){closeAll();return}
- if(t.dataset.city){setCity(t.dataset.city);closeAll();toast('город: '+CITY[t.dataset.city].n);return}
- if(t.dataset.add){cart[t.dataset.add]=(cart[t.dataset.add]||0)+1;saveCart();toast('добавлено в корзину');return}
- if(t.dataset.q){const id=t.dataset.q;cart[id]=Math.max(0,cart[id]+ +t.dataset.d);if(!cart[id])delete cart[id];saveCart();return}
- if(t.dataset.rm){delete cart[t.dataset.rm];saveCart();return}
- if(t.dataset.unfav){fav=fav.filter(x=>x!==t.dataset.unfav);store.set('fav',fav);counts();renderCart(true);renderGrid();return}
+ if(d.city){setCity(d.city);closeAll();toast('город: '+CITY[d.city].n);return}
+ if(d.ci!==undefined&&t.closest('#sw')){cur.ci=+d.ci;cur.i=0;drawGal();drawInfo();return}
+ if(d.gi!==undefined){cur.i=+d.gi;drawGal();return}
+ if(d.step){step(+d.step);return}
+ if(d.add){if(cur.ci<0){toast('сначала выберите цвет');$('#sw').scrollIntoView({behavior:'smooth',block:'center'});return}const k=ckey(d.add,cur.ci);cart[k]=(cart[k]||0)+1;saveCart();toast('добавлено в корзину');return}
+ if(d.q){cart[d.q]=Math.max(0,cart[d.q]+ +d.d);if(!cart[d.q])delete cart[d.q];saveCart();return}
+ if(d.rm){delete cart[d.rm];saveCart();return}
+ if(d.unfav){fav=fav.filter(x=>x!==d.unfav);store.set('fav',fav);counts();renderCart(true);renderGrid();return}
+ if(d.open){openProduct(d.open);return}
  if(t.hasAttribute('data-citych')){open($('#pop'));return}
- if(t.hasAttribute('data-showfav')){closeAll();state.favOnly=true;renderGrid();window.scrollTo({top:0,behavior:'smooth'});return}
- if(t.classList.contains('card')){openProduct(t.dataset.id)}
+ if(t.classList.contains('card')){openProduct(d.id)}
 });
+// свайп по главному фото
+let sx=null;
+document.addEventListener('touchstart',e=>{if(e.target.closest('.gal-main'))sx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>40)step(dx<0?1:-1)});
+
 $('#cartBtn').onclick=()=>{renderCart(false);open($('#dr'))};
 $('#favBtn').onclick=()=>{renderCart(true);open($('#dr'))};
 $('#srBtn').onclick=()=>{open($('#sr'));setTimeout(()=>$('#srIn').focus(),200)};
@@ -434,8 +455,11 @@ $('#srIn').onkeydown=e=>{if(e.key==='Enter'){closeAll();window.scrollTo({top:0,b
 $('#sort').onchange=e=>{state.sort=e.target.value;renderGrid()};
 
 if(city&&CITY[city])setCity(city);
-else{city=null;$('#ask').href=waLink('Здравствуйте! У меня вопрос по кепкам 🧢');setTimeout(()=>open($('#pop')),900)}
+else{city=null;$('#ask').href=waLink('Здравствуйте! У меня вопрос по кепкам 🧢');setTimeout(()=>{if(!document.querySelector('.ov.on'))open($('#pop'))},900)}
 counts();renderGrid();
+// ссылка на модель: shop.html#m-903 (или #m-903-2 — сразу 2-й цвет)
+const hm=location.hash.match(/^#m-(\d{3})(?:-(\d+))?/);
+if(hm&&byId(hm[1])){if(!city)city=null;setTimeout(()=>openProduct(hm[1],hm[2]?+hm[2]-1:undefined),city?50:0)}
 })();
 </script>
 </body>
