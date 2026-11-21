@@ -46,11 +46,14 @@ img{display:block;max-width:100%}
 .cats{display:flex;gap:26px;justify-content:center;padding:22px 32px 6px;overflow-x:auto;scrollbar-width:none}
 .cats::-webkit-scrollbar{display:none}
 .cat{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px;font-weight:500;flex:0 0 auto}
-.cat .ci{width:76px;height:76px;border-radius:50%;border:1.5px solid #222;overflow:hidden;display:grid;place-items:center;background:var(--soft);transition:transform .25s}
+.cat .ci{width:76px;height:76px;border-radius:50%;border:1.5px solid #222;overflow:hidden;display:grid;place-items:center;background:var(--soft);transition:outline-color .2s,transform .25s;outline:2px solid transparent;outline-offset:-2.5px}
+.cat{transition:text-shadow .2s}
 .cat .ci img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.cat:hover .ci{transform:translateY(-3px)}
-.cat.act{font-weight:800}
-.cat.act .ci{border-width:3px}
+.cat:hover .ci,.cat.act .ci,.cat:focus-visible .ci{outline-color:#111}
+.cat:hover,.cat.act,.cat:focus-visible{text-shadow:.35px 0 0 currentColor,-.35px 0 0 currentColor;color:#111}
+.cat.act .ci{outline-width:2.5px}
+.cat:active .ci{transform:scale(.95)}
+@media (hover:none){.cat:hover:not(.act) .ci{outline-color:transparent}.cat:hover:not(.act){text-shadow:none}}
 .ci-all{background:#111 !important;color:#fff;font-weight:800;font-size:22px;letter-spacing:-1px}
 
 .bar{display:flex;justify-content:space-between;align-items:center;padding:14px 80px;font-size:15px}
