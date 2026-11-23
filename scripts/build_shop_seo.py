@@ -16,6 +16,7 @@ def price(p):
 def instock(p):
     rows = [KP.get(f"{p['id']}|{i}") for i in range(len(p['colors']))]
     return not any(rows) or any(r and r.get('a') for r in rows)
+LOADATTR = lambda n: 'fetchpriority="high"' if n <= 4 else 'loading="lazy"'
 sm = lambda u: u[:-5] + '-s.webp'
 money = lambda n: f"{n:,}".replace(',', ' ') + ' ₸'
 
@@ -32,7 +33,7 @@ for n, p in enumerate(P, 1):
         'offers': {'@type': 'Offer', 'price': pr, 'priceCurrency': 'KZT', 'url': url,
                    'availability': 'https://schema.org/' + ('InStock' if instock(p) else 'OutOfStock')}}})
     cards.append(f'<article class="card" data-id="{p["id"]}" style="opacity:1;transform:none">'
-                 f'<div class="ph"><img class="a" src="{sm(p["cards"][0])}" alt="Кепка CAPROYAL модель {p["id"]}" loading="lazy"></div>'
+                 f'<div class="ph"><img class="a" src="{sm(p["cards"][0])}" alt="Кепка CAPROYAL модель {p["id"]}" {LOADATTR(n)} width="560" height="700"></div>'
                  f'<h2 class="nm">модель {p["id"]}</h2><div class="sub">{H.escape(p["mat"])} · {H.escape(p["form"])}</div>'
                  f'<div class="pr">{money(pr)}</div><div class="dots"><small>цвета: {H.escape(colors)}</small></div></article>')
 
